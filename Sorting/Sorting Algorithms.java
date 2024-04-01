@@ -1,6 +1,6 @@
-Sorting algorithms
+//Sorting algorithms
 
-selection sort
+//selection sort
 
 class HelloWorld {
     public static void main(String[] args) {
@@ -37,7 +37,7 @@ class sorting{
     }
 }
 
-Bubble sort
+//Bubble sort
 
 
 class HelloWorld {
@@ -74,7 +74,7 @@ class sorting {
     }
 }
 
-insertion sort
+//insertion sort
 
 class HelloWorld {
     public static void main(String[] args) {
@@ -114,7 +114,7 @@ class sorting {
     }
 }
 
-quick sort
+//quick sort
 
 class HelloWorld {
     public static void main(String[] args) {
@@ -165,7 +165,7 @@ class sorting {
 }
 
 
-merge sort
+//merge sort
 
 class HelloWorld {
     public static void main(String[] args) {
