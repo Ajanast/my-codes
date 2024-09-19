@@ -2,7 +2,7 @@ public class Main {
     public static <T> void main(String[] args) {
         Linkedlist<String>list=new Linkedlist<String>();
         list.insetAtBeginning("Anast");
-        list.insetAtBeginning("Jana");
+        list.insetAtBeginning("raj");
         //list.display();
         //System.out.println();
         list.insertAtPosition(1,"Ganesh");
