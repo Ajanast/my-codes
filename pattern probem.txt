@@ -1,0 +1,601 @@
+class Main {
+    public static void main(String[] args) {
+        pattern34(5);
+    }
+     static void pattern34(int n){
+        for(int row=1;row<=n;row++){
+          char ch= (char)('A' + n-row);
+          
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print(ch+" ");
+                ch-=1;
+            }
+             ch-=1;
+            System.out.println();
+    }
+    }
+    
+    static void pattern33(int n){
+       char ch= 'a';
+       int count=1;
+        for(int row=1;row<=n;row++){
+          
+          
+            for(int col=1;col<=row;col++){
+                if(count%2==1){
+                  System.out.print(Character.toLowerCase(ch)+" "); 
+                }
+                else{
+                     System.out.print(Character.toUpperCase(ch)+" ");
+                }
+                count++;
+                ch++; 
+               
+            }
+            
+            System.out.println();
+    }
+    }
+    static void pattern32(int n){
+        for(int row=1;row<=n;row++){
+          char ch= (char)('A' + n-row);
+          
+            for(int col=1;col<=row;col++){
+                System.out.print(ch+" ");
+                ch+=1;
+            }
+            
+            System.out.println();
+    }
+    }
+  static void pattern37(int n){
+        for(int row=1;row<=n;row++){
+          char ch='A';
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print(ch+" ");
+                ch+=1;
+            }
+            System.out.println();
+    }
+    }
+   static void pattern36(int n){
+        for(int row=1;row<=n;row++){
+          char ch='A';
+            for(int col=1;col<=row;col++){
+                System.out.print(ch+" ");
+                ch+=1;
+            }
+            System.out.println();
+    }
+    }
+   static void pattern27(int n){
+     int num=1;
+        for(int row=1;row<=n;row++){
+          for(int space=1;space<row;space++){
+            System.out.print("  ");
+          }
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print(num+" ");
+                 num++;
+            }
+            System.out.println();
+    }
+    int num2=n*n+n;
+    for(int row=n;row>=1;row--){
+      for(int space=1;space<=n-row;space++){
+            System.out.print("  ");
+          }
+          for(int col=n-1;col>=1;col++){
+                System.out.print(num+" ");
+                 num++;
+            }
+    }
+    }
+  static void pattern25(int n){
+        for(int row=1;row<=n;row++){
+          for(int space=1;space<=n-row;space++){
+            System.out.print(" ");
+          }
+            for(int col=1;col<=n;col++){
+                if(col==1||col==n||row==1||row==n){
+                System.out.print("*");
+                }
+                else{
+                  System.out.print(" ");
+                }
+            }
+            System.out.println();
+    }
+    }
+  
+   static void pattern24(int n){
+          int inspace=2*n-2;
+           for(int row=1;row<=n;row++){
+            for(int col=1;col<=row;col++){
+              if(col==1||col==row){
+                System.out.print("*");
+              }
+              else{
+                System.out.print(" ");
+              }
+            }
+            for(int i=0;i<inspace;i++){
+                  System.out.print(" ");
+            }
+            for(int col=1;col<=row;col++){
+                if(col==1||col==row){
+                System.out.print("*");
+              }
+              else{
+                System.out.print(" ");
+              }
+            }
+            inspace-=2;
+            
+            System.out.println();
+    }
+          inspace=2;
+         for(int row=n-1;row>=1;row--){
+            for(int col=1;col<=row;col++){
+                if(col==1||col==row){
+                System.out.print("*");
+              }
+              else{
+                System.out.print(" ");
+              }
+            }
+            for(int i=0;i<inspace;i++){
+                  System.out.print(" ");
+            }
+            for(int col=1;col<=row;col++){
+               if(col==1||col==row){
+                System.out.print("*");
+              }
+              else{
+                System.out.print(" ");
+              }
+            }
+            inspace+=2;
+            
+            System.out.println();
+    }
+    
+    
+          
+    }
+    
+  static void pattern35(int n){
+    int inspace=2*n-2;
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=row;col++){
+                System.out.print(col);
+            }
+            for(int i=1;i<=inspace;i++){
+                System.out.print(" ");
+            }
+            for(int col=row;col>=1;col--){
+                System.out.print(col);
+            }
+            inspace-=2;
+            
+            System.out.println();
+    }
+    }
+  
+   static void pattern26(int n){
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print(row+" ");
+            }
+            System.out.println();
+    }
+    }
+    static void pattern19(int n){
+          int inspace=2*n-2;
+           for(int row=1;row<=n;row++){
+            for(int col=1;col<=row;col++){
+                System.out.print("*");
+            }
+            for(int i=0;i<inspace;i++){
+                  System.out.print(" ");
+            }
+            for(int col=1;col<=row;col++){
+                System.out.print("*");
+            }
+            inspace-=2;
+            
+            System.out.println();
+    }
+          inspace=2;
+         for(int row=1;row<=n-1;row++){
+            for(int col=1;col<=n-row;col++){
+                System.out.print("*");
+            }
+            for(int i=0;i<inspace;i++){
+                  System.out.print(" ");
+            }
+            for(int col=1;col<=n-row;col++){
+                System.out.print("*");
+            }
+            inspace+=2;
+            
+            System.out.println();
+    }
+    
+    
+          
+    }
+    
+      static void pattern18(int n){
+          int inspace=0;
+          
+         for(int row=1;row<=n;row++){
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print("*");
+            }
+            for(int i=0;i<inspace;i++){
+                  System.out.print(" ");
+            }
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print("*");
+            }
+            inspace+=2;
+            
+            System.out.println();
+    }
+    inspace-=2;
+     for(int row=1;row<=n;row++){
+            for(int col=1;col<=row;col++){
+                System.out.print("*");
+            }
+            for(int i=0;i<inspace;i++){
+                  System.out.print(" ");
+            }
+            for(int col=1;col<=row;col++){
+                System.out.print("*");
+            }
+            inspace-=2;
+            
+            System.out.println();
+    }
+          
+    }
+      
+     static void pattern17(int n){
+          
+        for(int row=1;row<=n;row++){
+            for(int space=1;space<=n-row;space++){
+                System.out.print(" ");
+            }
+            for(int col=row;col>=1;col--){
+                System.out.print(col);
+            }
+            for(int col=2;col<=row;col++){
+                System.out.print(col);
+            }
+            
+            System.out.println();
+    }
+    for(int row=n-1;row>=1;row--){
+        for(int space=1;space<=n-row;space++){
+            System.out.print(" ");
+        }
+            for(int col=row;col>=1;col--){
+                System.out.print(col);
+            }
+            for(int col=2;col<=row;col++){
+                System.out.print(col);
+            }
+          System.out.println();  
+        
+    }
+    }
+      static void pattern22(int n){
+          int start=1;
+        for(int row=1;row<=n;row++){
+            if(row%2==0){
+                start=0;
+            }
+            else{
+                start=1;
+            }
+            for(int col=1;col<=row;col++){
+                System.out.print(start+" ");
+                start=1-start;
+            }
+            System.out.println();
+    }
+    }
+      static void pattern21(int n){
+          int num=1;
+        for(int row=1;row<=n;row++){
+            
+            for(int col=1;col<=row;col++){
+                System.out.print(num+" ");
+                num++;
+            }
+            System.out.println();
+    }
+    }
+    static void pattern16(int n){
+        for(int row=0;row<n;row++){
+            for(int space=n-1;space>=row;space--){
+                System.out.print(" ");
+            }
+            int num=1;
+            for(int col=0;col<=row;col++){
+                System.out.print(num+" ");
+                num=num*(row-col)/(col+1);
+            }
+            System.out.println();
+    }
+    }
+     static void pattern15(int n){
+          
+        for(int row=1;row<=n;row++){
+            for(int space=1;space<=n-row;space++){
+            
+                System.out.print(" ");
+            }
+            for(int col=1;col<=2*row-1;col++){
+                if(col==1||col==2*row-1){
+                System.out.print("*");
+                }
+                else{
+                 System.out.print(" ");   
+                }
+            }
+             System.out.println();
+    }
+    for(int row=n-1;row>=1;row--){
+        for(int space=1;space<=n-row;space++){
+            System.out.print(" ");
+        }
+        for(int col=1;col<=2*row-1;col++){
+            if(col==1||col==2*row-1){
+                System.out.print("*");
+                }
+                else{
+                 System.out.print(" ");   
+                }
+        }
+        System.out.println();
+    }
+    }
+   
+     static void pattern14(int n){
+          
+        for(int row=n;row>=1;row--){
+            for(int space=1;space<=n-row;space++){
+              System.out.print(" ");
+            }
+            
+            for(int col=1;col<=2*row-1;col++){
+                if(col==1||col==2*row-1|| row==n){
+                System.out.print("*");
+                }
+                else{
+                 System.out.print(" ");   
+                }
+            }
+             System.out.println();
+             
+    }
+    }
+     static void pattern13(int n){
+          
+        for(int row=1;row<=n;row++){
+            for(int space=1;space<=n-row;space++){
+            
+                System.out.print(" ");
+            }
+            for(int col=1;col<=2*row-1;col++){
+                if(col==1||col==2*row-1|| row==n){
+                System.out.print("*");
+                }
+                else{
+                 System.out.print(" ");   
+                }
+            }
+             System.out.println();
+    }
+    }
+     static void pattern20(int n){
+          
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=n;col++){
+                if(row==1||row==n||col==1||col==n){
+                System.out.print("*");
+                }
+                else{
+                 System.out.print(" ");   
+                }
+            }
+             System.out.println();
+    }
+    }
+      static void pattern31(int n){
+          int R=n+1;
+          int N=2*n;
+        for(int row=1;row<=N-1;row++){
+            for(int col=1;col<=N-1;col++){
+                int value=R-Math.min(Math.min(row,col),Math.min(N-row,N-col));
+                System.out.print(value+" ");
+            }
+             System.out.println();
+    }
+    }
+    
+     public static void pattern30(int n){
+        for(int row=1;row<=n;row++){
+            for(int space=1;space<=n-row;space++){
+                System.out.print("  ");
+            }
+            for(int col=row;col>=1;col--){
+                System.out.print(col+" ");
+            }
+            for(int col=2;col<=row;col++){
+                System.out.print(col+" ");
+            }
+            System.out.println();
+           
+            }
+        }
+    public static void pattern28(int n){
+        for(int row=1;row<=2*n-1;row++){
+            int totalcol=row<=n?row:2*n-row;
+            int totalspace=n-totalcol;
+            for(int space=1;space<=totalspace;space++){
+                System.out.print(" ");
+            }
+            for(int col=1;col<=totalcol;col++){
+                System.out.print("* ");
+            }
+            System.out.println();
+           
+            }
+        }
+   
+     public static void pattern12(int n){
+        for(int row=1;row<=n;row++){
+            for(int space=1;space<=row-1;space++){
+                System.out.print(" ");
+            }
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print("* ");
+            }
+            System.out.println();
+           
+        }
+     
+         for(int row=1;row<=n;row++){
+             for(int space=1;space<=n-row;space++){
+                System.out.print(" ");
+            }
+            for(int col=1;col<=row;col++){
+                System.out.print("* ");
+            }
+            System.out.println();
+           
+        }
+    }
+   public static void pattern11(int n){
+        for(int row=1;row<=n;row++){
+           
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print("* ");
+            }
+            System.out.println();
+            for(int space=1;space<=row;space++){
+                System.out.print(" ");
+            }
+        }
+    }
+     static void pattern10(int n){
+        for(int row=1;row<=n;row++){
+            for(int space=n-1;space>=row;space--){
+                System.out.print(" ");
+            }
+            for(int col=1;col<=row;col++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+    }
+    }
+    static void pattern9(int n){
+        for(int row=n;row>0;row--){
+            for(int space=n;space>row;space--){
+                System.out.print(" ");
+            }
+            for(int col=1;col<=2*row-1;col++){
+                System.out.print("*");
+            }
+              System.out.println();
+    }
+    }
+      static void pattern8(int n){
+        for(int row=1;row<=n;row++){
+            for(int space=1;space<=n-row;space++){
+                System.out.print(" ");
+            }
+            for(int col=1;col<=row*2-1;col++){
+                System.out.print("*");
+            }
+             System.out.println();
+    }
+    }
+     static void pattern7(int n){
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print("*");
+            }
+             System.out.println();
+            for(int space=1;space<=row;space++){
+                System.out.print(" ");
+            }
+            
+           
+    }
+    }
+    static void pattern6(int n){
+        for(int row=1;row<=n;row++){
+            for(int space=1;space<=n-row;space++){
+                System.out.print(" ");
+            }
+            for(int col=1;col<=row;col++){
+                System.out.print("*");
+            }
+            System.out.println();
+    }
+    }
+     static void pattern5(int n){
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=row;col++){
+                System.out.print("*");
+            }
+            System.out.println();
+    }
+     for(int row=1;row<n;row++){
+            for(int col=1;col<=n-row;col++){
+                System.out.print("*");
+            }
+            System.out.println();
+    }
+    }
+     static void pattern4(int n){
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=row;col++){
+                System.out.print(col);
+            }
+            System.out.println();
+    }
+    }
+    static void pattern3(int n){
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=n-row+1;col++){
+                System.out.print("*");
+            }
+            System.out.println();
+    }
+    }
+    static void pattern2(int n){
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=row;col++){
+                System.out.print("*");
+            }
+            System.out.println();
+    }
+    }
+    
+    static void pattern1(int n){
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=n;col++){
+                System.out.print("*");
+            }
+            System.out.println();
+    }
+}
+
+
+
+}
