@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+     int arr[]={3, 1, 2, 5, 4, 6, 7, 5};
+      int[] result= find(arr);
+      System.out.println("First Repeating Element: " + result[0]);
+      System.out.println("Smallest Missing Positive Integer: " + result[1]);
+  }
+  public static int[] find(int[] arr){
+    int firstrepeatingnum=-1;
+    int misiingnum=1;
+    HashSet<Integer> hs=new HashSet<>();
+    
+    for(int val:arr){
+      if(hs.contains(val)){
+        if(firstrepeatingnum==-1){
+          firstrepeatingnum=val;
+        }
+      }
+      else{
+        hs.add(val);
+      }
+    }
+    while(hs.contains(misiingnum)){
+      misiingnum++;
+    }
+    return new int[]{firstrepeatingnum,misiingnum};
+    
+  }
+}
