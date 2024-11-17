@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        String str = "dabbdda";
+        
+        String str2 = charCount(str);
+        System.out.println(str2);
+    }
+     public static  String charCount(String s) {
+       StringBuilder sb=new StringBuilder();
+       HashMap<Character,Integer> map=new HashMap<>();
+       ArrayList<Character> list=new ArrayList<>();
+       
+       for(char c:s.toCharArray()){
+         map.put(c,map.getOrDefault(c,0)+1);
+         if(!list.contains(c)){
+           list.add(c);
+         }
+       }
+       for(char c:list){
+         sb.append(map.get(c)).append(c);
+       }
+       return sb.toString();
+       
+       
+     }
+}
