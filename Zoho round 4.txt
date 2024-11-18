@@ -1,0 +1,1079 @@
+COMPUTER NEWTWORKS
+
+1.A Record (Address Record):
+An A record maps a domain name to a specific IPv4 address.
+For the domain example.com with the server IP address 192.0.2.1
+
+2.CNAME Record (Canonical Name Record)
+What is the purpose of a CNAME record?
+Answer: A CNAME record maps a domain name (alias) to another domain name (canonical name).
+
+Provide a real-time example of a CNAME record.
+Answer: For a subdomain www.example.com pointing to example.com, the CNAME record would be:
+
+Host: www.example.com
+Type: CNAME
+Value: example.com
+
+3.How does an A record differ from a CNAME record?
+Answer: An A record directly maps a domain name to an IP address, while a CNAME record maps a domain name to another domain name, which then resolves to an IP address
+
+how data packets are forwarded between devices---
+4.Direct Routing:
+Direct routing refers to a method where data packets travel directly from the source to the destination without passing through intermediate nodes
+
+Efficiency: Direct routing is fast because packets travel via the shortest path directly to their destination.
+Scalability: Suitable for small networks
+
+5.Indirect Routing
+Indirect routing involves forwarding data packets through intermediate nodes (routers or switches) to reach the destination.
+
+Flexibility: Supports complex network topologies
+
+Comparison
+Direct Routing: Simple and efficient but may not scale well in large or complex networks.
+
+Indirect Routing: More flexible, reliable, and scalable, capable of handling complex network topologies but can introduce additional latency and complexity.
+
+Application in Networking
+Direct Routing: Common in small LANs where devices are directly connected
+Indirect Routing: Predominant in WANs
+
+6.FTP (File Transfer Protocol)
+FTP (File Transfer Protocol) is a standard network protocol used to transfer files from one host to another over a TCP-based network, such as the Internet or an intranet.
+
+Uses
+Website Management: Uploading and downloading files to and from a web server.
+File Sharing: Sharing large files between users.
+
+7.SMTP (Simple Mail Transfer Protocol)
+Definition
+SMTP (Simple Mail Transfer Protocol) is a standard communication protocol used for sending emails from a client to a server or between servers.
+
+Uses
+Email Transmission: Sending emails from a client application (e.g., Outlook, Gmail) to an email server.
+Server-to-Server Communication: Relaying emails between mail servers.
+
+Hub, Switch, and Router: An Overview
+These three devices are fundamental components in networking, each serving distinct roles in how data is managed and transmitted within and between networks.
+
+8.Hub
+Definition
+A hub is a basic networking device that connects multiple computers or other network devices together, making them act as a single network segment.
+
+Uses
+Small Networks: Used in small networks where simplicity and low cost are more important than performance.
+
+9.Switch
+Definition
+A switch is a more advanced networking device that connects devices within a network and uses MAC addresses to forward data only to the intended recipient.
+
+Local Area Networks (LANs): Commonly used to connect devices within a LAN.
+Disadvantages
+Cost: More expensive than hubs.
+
+10.Router
+Definition
+A router is a networking device that connects multiple networks together and routes data packets between them based on their IP addresses.
+Uses
+Inter-Network Communication: Connects and routes traffic between different networks, such as between a home network and the internet.
+
+11.LAN (Local Area Network)
+Definition
+A Local Area Network (LAN) is a network that connects computers and devices within a limited geographical area such as a home, office building, or campus.
+
+Uses
+Resource Sharing: Allows sharing of resources such as files, printers, and internet connections.
+Communication: Facilitates communication through emails, instant messaging, and video conferencing within the network.
+
+Examples
+Home networks
+Office networks
+School or campus networks
+
+12.WAN (Wide Area Network)
+Definition
+A Wide Area Network (WAN) spans a large geographical area, often a country or continent, and connects multiple smaller networks, including LANs and MANs (Metropolitan Area Networks).
+
+Uses
+Internet: The largest and most well-known WAN, connecting millions of private, public, academic, business, and government networks.
+Enterprise Networking: Connects the offices of large organizations spread across different locations.
+Global Communication: Facilitates international communication and collaboration.
+Examples
+The Internet
+Corporate networks connecting offices in different cities or countries
+
+13.Subnets (Subnetworks)
+Definition
+A subnet is a segmented piece of a larger network, created to improve performance and security. Subnetting involves dividing a network into smaller, manageable sections.
+
+Uses
+Network Performance: Reduces broadcast traffic and collision domains, improving network performance.
+Security: Segments sensitive parts of a network, restricting access to critical resources.
+
+Conclusion
+Understanding the differences between LAN, WAN, and subnets is crucial for effective network design and management. LANs are ideal for localized networking needs, WANs connect broader geographical areas, and subnets help optimize and secure larger networks.
+
+14.MAC Address (Media Access Control Address)
+Definition
+A MAC address, also known as a hardware address or physical address, is a unique identifier assigned to network interfaces for communications on a network segment.
+
+Uses
+Network Communication: MAC addresses are used to uniquely identify devices within the same local network segment.
+Address Resolution: Used in Address Resolution Protocol (ARP) to map IP addresses to MAC addresses.
+
+15.The OSI (Open Systems Interconnection) Model
+
+Answer: Troubleshooting a Network Issue Using the OSI Model
+To diagnose a network issue like slow access to a web application, the OSI model can be used systematically to identify the root cause. Here's how:
+
+1. Start from the Physical Layer (Layer 1)
+Check: Inspect cables, ports, and hardware connections. Verify that there are no physical damages or loose connections.
+Tools: Use a cable tester or check the device's hardware status.
+2. Move to the Data Link Layer (Layer 2)
+Check: Look for issues in switches or wireless access points. Ensure MAC addresses are resolved correctly, and there are no frame errors or collisions.
+Tools: Switch logs, Wireshark for frame analysis.
+3. Analyze the Network Layer (Layer 3)
+Check: Verify that the IP routing is functioning properly. Look for high latency, incorrect routing, or packet drops.
+Tools: Use ping and traceroute to check connectivity and identify routing delays.
+4. Focus on the Transport Layer (Layer 4)
+Check: Ensure reliable end-to-end communication. Check for excessive retransmissions, packet loss, or issues with TCP/UDP ports.
+Tools: Use network monitoring tools like Wireshark or Netstat to analyze packet flows and port availability.
+5. Examine the Application Layer (Layer 7)
+Check: Ensure the web application server is responsive and properly configured. Look for high CPU usage, memory issues, or overloaded servers.
+Tools: Check application logs, server performance monitors, and web server configurations.
+Priority Focus
+Start with Layer 1 and 2 for basic connectivity issues.
+Focus on Layer 3 and 4 if the issue seems related to network routing or transport.
+End with Layer 7 if the problem is specific to the application.
+
+
+16.SSL (Secure Sockets Layer) is a cryptographic protocol designed to provide secure communication over a computer network. It is commonly used to secure data transfers between web servers and browsers, but it can also be used for other applications such as email, file transfer, and virtual private networks (VPNs)
+
+Interview Question: Imagine you're tasked with implementing SSL/TLS for a web server hosting an e-commerce website. How would you go about obtaining and installing an SSL certificate for the server, and what steps would you take to ensure that the SSL/TLS configuration is properly configured for secure communication with clients?
+
+Obtain an SSL Certificate:
+Generate a Certificate Signing Request (CSR), choose a trusted Certificate Authority (CA) (e.g., Let’s Encrypt or DigiCert), and validate your domain to get the SSL certificate.
+
+Install the Certificate:
+Configure the SSL certificate on the web server (e.g., Apache or Nginx) by providing the certificate file, private key, and intermediate certificate.
+
+Enable HTTPS:
+Redirect all HTTP traffic to HTTPS using server configuration and ensure the web server listens on port 443 for secure connections.
+
+Use Strong Security Configurations:
+Disable outdated protocols like SSL 3.0 and TLS 1.0, and enable only TLS 1.2 or 1.3 with strong cipher suites.
+
+Test and Monitor:
+Verify the SSL/TLS setup using tools like SSL Labs, implement HTTP Strict Transport Security (HSTS), and enable OCSP Stapling for performance.
+
+17.TCP, or Transmission Control Protocol, is one of the core protocols of the Internet Protocol Suite (TCP/IP). It operates at the transport layer (Layer 4) of the TCP/IP model and is responsible for establishing and maintaining a reliable connection between two devices over a network
+
+Interview Question: Imagine you're tasked with troubleshooting a network performance issue where users are experiencing slow download speeds when accessing a file server over the LAN. After conducting initial tests, you suspect that TCP congestion control might be causing the problem. How would you verify whether TCP congestion control is indeed the issue, and what steps would you take to mitigate it?
+
+Monitor Network Traffic:
+Use tools like Wireshark to identify high retransmissions, dropped packets, or latency that might indicate congestion.
+
+Check TCP Congestion Algorithm:
+Verify the congestion control algorithm in use (e.g., Cubic, Reno) on both the server and client using system commands.
+
+Analyze TCP Window Size:
+Look for signs of shrinking TCP window sizes, which suggest congestion control is being triggered.
+
+Optimize Network Infrastructure:
+Ensure switches, routers, and LAN links are not overloaded, and upgrade bandwidth if necessary.
+
+Tune TCP Parameters:
+Adjust TCP settings like buffer sizes (tcp_rmem and tcp_wmem) or consider switching to a modern congestion algorithm like BBR for better performance.
+
+18.User Datagram Protocol (UDP) is one of the core protocols of the Internet Protocol (IP) suite. It is used for sending short messages called datagrams between devices on an IP network
+UDP is a lightweight, connectionless protocol suited for applications where speed and low latency are more important than reliability. Its simplicity and efficiency make it ideal for real-time communications, streaming
+
+19.Step-by-Step Explanation of Website Loading Process
+
+Typing the URL:
+You enter the website URL (e.g., https://www.example.com) in the browser.
+
+DNS Resolution:
+The browser converts the domain name to an IP address by querying DNS servers.
+
+TCP Connection:
+The browser establishes a connection to the server using a three-way handshake (SYN, SYN-ACK, ACK).
+
+HTTP Request and Response:
+
+The browser sends an HTTP request to the server.
+The server processes it and responds with the requested data (HTML, CSS, JavaScript, etc.).
+Rendering and Display:
+The browser processes the response, fetches additional resources, and displays the web page to the user.
+
+20.What is a Proxy Server?
+A proxy server acts as a gateway between a client and the internet, providing features like anonymity, security, and content control.
+
+How It Works:
+A client sends a request to the proxy server.
+The proxy forwards the request to the target server.
+The proxy receives the response from the server and sends it back to the client.
+
+Types of Proxy Servers:
+Forward Proxies:
+
+Anonymous Proxy: Hides the client’s IP address.
+Transparent Proxy: Does not hide the IP address.
+Reverse Proxies:
+
+Load Balancing: Distributes traffic across multiple servers.
+Caching: Saves copies of requested data for faster responses.
+Specialized Proxies:
+Uses:
+Anonymity & Privacy: Hide user identity online.
+Content Filtering: Block unwanted content in workplaces or homes.
+
+Proxy servers are versatile tools that improve privacy, security, and network performance, but their setup must be managed carefully to avoid potential drawbacks.
+
+CLOUD COMPUTING
+
+1.Infrastructure as a Service (IaaS):
+
+IaaS provides virtualized computing resources over the internet. Customers rent virtual machines, storage, and networks 
+
+Example: Zoho Cloud
+
+Real-Time Example: A growing e-commerce company needs scalable storage and computing power to handle its increasing customer base and transactions. Instead of investing in physical servers, they use Zoho Cloud services to rent virtual machines and storage space
+
+2.Platform as a Service (PaaS):
+
+ PaaS provides a platform allowing customers to develop, run, and manage applications without dealing with the underlying infrastructure. This includes development tools, databases, and application hosting.
+
+Example: Zoho Creator
+
+Real-Time Example: A small business wants to create a custom application to manage their inventory and sales processes. They use Zoho Creator, a low-code application development platform. With Zoho Creator, they can quickly build, deploy, and manage their application
+
+3.Software as a Service (SaaS):
+
+SaaS delivers software applications over the internet on a subscription basis. Users access the software via a web browser, and the provider manages the infrastructure, software updates, and security.
+
+Example: Zoho CRM
+
+Real-Time Example: A sales team uses Zoho CRM to manage customer relationships, track leads, and automate sales processes. They access Zoho CRM through their web browsers, and all data is stored in the cloud. Zoho handles all software updates, security
+
+
+DATABASE MANAGEMENT SYSTEM
+
+1.Concurrent Executions in Databases
+
+When many users or processes access the database at the same time, it's called concurrent execution
+
+Concurrent execution improves performance but risks conflicts like lost updates and dirty reads.
+Techniques like locking, MVCC, timestamping, and OCC ensure transactions work smoothly.
+
+2.When managing concurrent access in databases, locks ensure data consistency
+Explicit Locks:
+The developer explicitly tells the database to lock specific data
+How it works:
+You write specific commands in your code to lock and unlock resources, like:
+LOCK TABLE accounts IN EXCLUSIVE MODE;
+Example:
+A bank transfer system might lock an account during a transaction to ensure no other operation changes the balance until the transfer is done.
+
+ Implicit Locks:
+
+The database system automatically handles locking when you perform operations like reading or writing data
+
+How it works:
+You don’t have to write any lock-related code. The database locks resources 
+
+Control:
+
+The database decides when to lock and release.
+Simpler for developers but less flexible if custom locking logic is required.
+Example:
+If a transaction updates a row, the database automatically locks it until the transaction completes.
+
+3.Multiple Granularity Locking (MGL):
+Multiple Granularity Locking (MGL) is a way to control concurrent access to a database
+This improves performance and reduces unnecessary conflicts
+
+4.Non-Serializable Schedule Simplified
+A non-serializable schedule happens when transactions are executed concurrently (at the same time), but the result isn't the same as if the transactions were run one by one, in a specific order (serially).
+
+Here’s a breakdown of the transactions:
+
+T1: Reads A, Writes B (T1 uses data A and updates B).
+T2: Reads B, Inserts C (T2 reads B and adds a new item C).
+T3: Deletes A, Reads C (T3 deletes A and reads C).
+
+
+Why is this non-serializable?
+T1 and T3 create a problem because T3 wants to delete A, but T1 has already read it and might change it. This can cause T3 to delete A based on the wrong data.
+This conflict (where T1 and T3 are trying to do things with the same data) makes the schedule non-serializable.
+How to fix it?
+Locking: We can prevent T3 from deleting A until T1 is done working with it.
+Timestamping: Transactions can be executed in a way that ensures they are done in the correct order, avoiding these conflicts.
+In short, when two transactions are trying to work with the same data at the same time in a conflicting way, it leads to problems that need to be managed with rules like locking or ordering.
+
+5.Scheduling in Database Management
+
+scheduling is the process of deciding the order in which transactions (like adding an order or updating account details) should be executed. The goal is to ensure that the system works efficiently even when multiple transactions are happening at the same time.
+
+Interviewer Question:
+Q: How would you design a scheduling algorithm for a high-traffic e-commerce platform, ensuring data consistency and maximizing system throughput?
+
+A:
+
+For a high-traffic e-commerce platform, I'd focus on balancing data consistency with efficient use of system resources. Here's how:
+
+Concurrency Control:
+
+Use locking to prevent conflicts between transactions (e.g., two users can't update the same order at the same time).
+Timestamp Ordering can help ensure that transactions are executed in an order that avoids conflicts.
+Isolation Levels:
+
+Choose an isolation level that fits the platform’s needs. For example, Repeatable Read could be good for order placement to ensure consistency in the account balance while allowing high throughput.
+Maximizing Throughput:
+
+Implement optimistic concurrency where transactions are allowed to run without locks initially, then check for conflicts when they are committed. This reduces waiting time and increases system throughput.
+By combining these techniques, we can maintain data consistency while handling a large volume of transactions without slowing down the system.
+
+6.Starvation:
+
+What it is: Starvation happens when a transaction or process keeps getting delayed
+
+Cause: Starvation can occur because of poor scheduling
+
+Effect: The transaction might never get the chance to finish, which can lead to poor performance
+
+Resolution:
+Fair resource allocation and better scheduling.
+
+7.Deadlock:
+
+What it is: Deadlock happens when two or more transactions are stuck in a situation where each is waiting for the other to release resources
+
+Cause: each transaction is holding resources that others need, and no one is releasing their resources.
+
+Effect: All involved transactions are stuck, 
+
+Detection: Regularly check for deadlocks by scanning resource allocation graphs.
+
+Resolution: If deadlock occurs, use techniques like killing one or more transactions or rolling back transactions to break the cycle.
+
+
+8.States of a Transaction (Simple Explanation)
+Active: The transaction is running and performing tasks, like reading or writing data.
+
+Partially Committed: The transaction has finished its tasks, but the changes are not yet permanent. It's waiting for confirmation.
+
+Committed: The transaction is successfully completed, and its changes are permanent. Other transactions can see the changes now.
+
+Failed: An error occurred, and the transaction cannot continue. The changes are not saved, and the system goes back to the state before the transaction started.
+
+Aborted: After a failure, the transaction is stopped completely, and any changes made are undone. Any resources it was using (like locks) are released.
+
+Interviewer Question Response (Simple Explanation)
+Interviewer: If a transaction fails in a critical financial application, how would you handle it?
+
+Answer:
+
+Rollback: I would cancel all the changes made by the transaction and return the system to how it was before the transaction started.
+
+Release Resources: I would make sure any resources (like locks) that the transaction was using are freed up so other transactions can proceed.
+
+Log the Error: I would save a record of the failure with details to help identify what went wrong.
+
+Notify the Team: I would alert the right people (like system admins) so they can investigate and fix any issues.
+
+Retry or Alternative Path: If it’s a temporary problem, I would try the transaction again, or find another way to keep things working smoothly.
+
+9.Transactions in Databases
+
+A transaction in a database is like a promise: a group of actions that must all happen together
+
+For example, when transferring money from one bank account to another, two things must happen:
+
+Subtract money from the sender’s account.
+Add the same amount to the receiver’s account.
+If something goes wrong with either action (e.g., not enough funds in the sender's account), both actions are canceled, and nothing changes. This keeps the database safe and accurate
+
+Interviewer Question (Simple)
+Interviewer: How would you ensure that money transfers between accounts are atomic in a banking app?
+
+Answer:
+
+To ensure a money transfer is atomic, I would use a transaction that includes two steps:
+
+Deduct money from the sender's account.
+Add money to the recipient's account.
+
+10.View and Conflict Serializability
+View Serializability and Conflict Serializability both help check if the order of transactions in a database can be rearranged without changing the final result.
+
+View Serializability looks at what data was read and written.
+Conflict Serializability focuses on avoiding conflicts when multiple transactions try to write to the same data.
+
+11.snapshot in a database:
+
+A snapshot in a database is like a picture of the data taken at a certain moment. When a transaction starts, it gets a copy of the data as it was at that time. Even if other transactions change the data later, the transaction only sees its original copy, not the changes
+
+JAVA 
+
+
+1.What is java?
+Java is a high-level, object-oriented programming language that is widely used for building software applications. It was created by James Gosling
+ and released in 1995
+
+
+1. Is Java Platform Independent if then how?
+Yes, Java is a Platform Independent language. Unlike many programming languages javac compiles the program to form a bytecode or .class file. This file is independent of the software
+but needs a JVM(Java Virtual Machine) file for further execution of the bytecode.
+
+2.Key Features of Java:
+Object-Oriented
+Platform-Independent
+It includes features like automatic garbage collection, exception handling
+
+3. What is JVM?
+JVM stands for Java Virtual Machine it is a Java interpreter. It is responsible for executing the bytecode created in Java. Although it is platform dependent which means the software of JVM is different for different Operating Systems 
+
+4. What is JIT?
+
+JIT stands for (Just-in-Time) compiler is a part of JRE(Java Runtime Environment), it is used for better performance of the Java applications during run-time
+
+5.What are Memory storages available with JVM?
+
+Class(Method) Area: stores class-level data of every class such as the runtime constant pool, field, and method data, and the code for methods.
+Heap: Objects are created or objects are stored. It is used to allocate memory to objects during run time.
+Stack: stores data and partial results which will be needed while returning value for method and performing dynamic linking
+Program Counter Register: stores the address of the Java virtual machine instruction currently being executed.
+Native Method Stack: stores all the native methods used in the application.
+
+6. What is a classloader?
+Classloader is the part of JRE(Java Runtime Environment), during the execution of the bytecode or created .class file classloader is responsible for dynamically loading the java classes and interfaces to JVM(Java Virtual Machine)
+
+7. Difference between JVM, JRE, and JDK.
+JVM: JVM also known as Java Virtual Machine is a part of JRE. JVM is a type of interpreter responsible for converting bytecode into machine-readable code. JVM itself is platform dependent but it interprets the bytecode which is the platform-independent reason why Java is platform-independent. 
+
+JRE: JRE stands for Java Runtime Environment, it is an installation package that provides an environment to run the Java program or application on any machine.
+
+JDK: JDK stands for Java Development Kit which provides the environment to develop and execute Java programs. JDK is a package that includes two things Development Tools to provide an environment to develop your Java programs and, JRE to execute Java programs or applications.
+8. What are the differences between Java and C++?
+             
+
+C++ is Platform Dependent
+
+Java is Platform Independent
+
+Application
+
+C++ is mainly used for System Programming
+
+Java is Mainly used for Application Programming
+
+Hardware
+
+C++ is nearer to hardware
+
+Java is not so interactive with hardware
+
+Global Scope
+
+C++ supports global and namespace scope.
+
+Java doesn’t support global scope.
+
+9. Explain public static void main(String args[]) in Java.
+
+public: the public is the access modifier responsible for mentioning who can access the element or the method and what is the limit.  It is responsible for making the main function globally available. It is made public so that JVM can invoke it from outside the class as it is not present in the current class.
+static: static is a keyword used so that we can use the element without initiating the class so to avoid the unnecessary allocation of the memory. 
+void: void is a keyword and is used to specify that a method doesn’t return anything. As the main function doesn’t return anything we use void.
+main: main represents that the function declared is the main function. It helps JVM to identify that the declared function is the main function.
+String args[]: It stores Java command-line arguments and is an array of type java.lang.String class.
+
+10. What is Java String Pool?
+A Java String Pool is a place in heap memory where all the strings defined in the program are stored.
+
+Q.1 Why are strings immutable in Java?
+
+Strings in Java are immutable because of several key reasons:
+
+Security: Strings are frequently used for things like usernames, passwords, and file paths. By making them immutable, it prevents accidental or malicious changes.
+Caching and Performance: Java uses a string pool to store literal strings. Because strings are immutable, they can be shared and reused, reducing memory usage.
+Thread Safety: Since strings are immutable, multiple threads can safely use the same string without synchronization, improving performance in multi-threaded applications.
+Q.2 What is the difference between creating a String using new() and as a literal?
+
+String Literal: When you create a string using a literal (e.g., String s = "Hello";), the JVM checks if the same literal exists in the string pool. If it exists, it returns a reference to the existing string; otherwise, it creates a new string in the pool.
+
+new String(): When you use new String("Hello"), a new string object is created on the heap, even if there is already an identical string in the pool. This results in two separate objects: one in the pool and one in the heap.
+
+Q.3 What is the Collections Framework?
+
+The Java Collections Framework is a unified architecture for storing and manipulating groups of objects. It includes interfaces like List, Set, Queue, Map, and classes like ArrayList, HashSet, LinkedList, and HashMap. It provides algorithms (e.g., sorting and searching) and enables dynamic data structures.
+
+Q.4 What is the difference between ArrayList and LinkedList?
+
+ArrayList:
+Based on a dynamic array.
+Accessing elements is faster (O(1)) because it is indexed.
+Inserting or deleting elements is slow (O(n)) because shifting elements is required.
+LinkedList:
+Based on a doubly linked list.
+Insertion and deletion of elements are faster (O(1)) if you already have a reference to the position.
+Accessing elements is slower (O(n)) because it requires traversing the list.
+Q.5 What is the difference between a HashMap and a TreeMap?
+
+HashMap:
+Does not maintain any order of keys.
+Offers O(1) time complexity for insertion, deletion, and lookup.
+Allows one null key and multiple null values.
+TreeMap:
+Maintains keys in sorted (natural) order or based on a custom comparator.
+Offers O(log n) time complexity for operations due to its underlying Red-Black tree structure.
+Does not allow null keys but allows multiple null values.
+Q.6 What is the difference between a HashSet and a TreeSet?
+
+HashSet:
+Stores elements in an unordered manner.
+Provides O(1) time complexity for basic operations like add, remove, and contains.
+Allows null elements.
+TreeSet:
+Stores elements in sorted order.
+Provides O(log n) time complexity for basic operations due to its underlying Red-Black tree.
+Does not allow null elements.
+Q.7 What is the difference between an Iterator and a ListIterator?
+
+Iterator:
+Can be used to traverse elements in any collection (List, Set, etc.).
+It allows only forward traversal.
+Does not support modifying the list (except for removing an element).
+ListIterator:
+Can be used to traverse elements only in List implementations (e.g., ArrayList, LinkedList).
+Allows both forward and backward traversal.
+Can modify the list (e.g., add or replace elements).
+Q.8 What is the difference between an ArrayList and a LinkedList?
+
+This is the same as Q.4. The core differences lie in the underlying data structures (Array vs. Linked List) and the performance characteristics of accessing, inserting, and removing elements.
+
+Q.9 What is the purpose of the Comparable interface?
+
+The Comparable interface is used to define a natural ordering for objects of a class. A class that implements this interface overrides the compareTo() method, which defines how objects should be compared for sorting (e.g., alphabetically or numerically). This allows objects to be sorted automatically by collections like TreeSet or Arrays.sort().
+
+Q.10 What is the difference between a HashSet and a TreeSet?
+
+This is the same as Q.6. The key differences are that HashSet is unordered and offers constant time for operations, while TreeSet maintains a sorted order and has logarithmic time complexity.
+
+Q.1 What is an exception?
+
+An exception in Java is an event that disrupts the normal flow of the program's instructions during execution. It occurs when a program encounters an abnormal condition, such as dividing by zero, accessing an array index out of bounds, or attempting to open a file that doesn’t exist. Java provides a way to handle these exceptions using the Exception class and its subclasses.
+
+Q.2 How does an exception propagate throughout the Java code?
+
+When an exception is thrown, Java looks for an appropriate catch block to handle it:
+
+If the method where the exception occurs has a try-catch block, the catch block is executed.
+If the method does not handle the exception, it is propagated to the calling method.
+This propagation continues until it reaches the main method. If no method handles the exception, the JVM terminates the program and prints a stack trace.
+Q.3 What is the difference between checked and unchecked exceptions?
+
+Checked Exceptions: These are exceptions that are checked at compile-time. They must be handled explicitly using a try-catch block or declared using throws in the method signature. Examples include IOException, SQLException, and FileNotFoundException.
+
+Unchecked Exceptions: These exceptions are not checked at compile-time but at runtime. They extend the RuntimeException class and do not need to be explicitly handled. Examples include NullPointerException, ArrayIndexOutOfBoundsException, and ArithmeticException.
+
+Q.4 What is the use of the try-catch block in Java?
+
+The try-catch block is used for exception handling in Java. Code that may throw an exception is placed in the try block, and the catch block is used to handle the exception. This prevents the program from crashing and allows for more graceful error handling.
+
+java
+Copy code
+try {
+   // Code that may throw an exception
+} catch (ExceptionType e) {
+   // Code to handle the exception
+}
+Q.5 What is the difference between throw and throws?
+
+throw: Used within a method to explicitly throw an exception. For example:
+
+java
+Copy code
+throw new IllegalArgumentException("Invalid argument");
+throws: Used in a method declaration to specify that the method might throw one or more exceptions. For example:
+
+java
+Copy code
+public void myMethod() throws IOException, SQLException {
+   // code
+}
+Q.6 What is the use of the finally block?
+
+The finally block contains code that will always be executed, whether an exception occurs or not. It is commonly used to release resources like file handles or database connections, ensuring that critical code runs even if an exception is thrown.
+
+java
+Copy code
+try {
+   // Code that may throw an exception
+} catch (ExceptionType e) {
+   // Exception handling code
+} finally {
+   // Code that always executes (cleanup code)
+}
+Q.7 What's the base class of all exception classes?
+
+The base class of all exceptions in Java is java.lang.Throwable. It has two direct subclasses:
+
+Exception: Used for exceptions that a program might want to catch.
+Error: Represents serious issues that a program should not try to handle (e.g., OutOfMemoryError).
+Q.8 What is Java Enterprise Edition (Java EE)?
+
+Java Enterprise Edition (Java EE) is a set of specifications that extend Java SE (Standard Edition) with APIs useful for developing large-scale, multi-tiered, scalable, and secure enterprise applications. It includes APIs for web services (JAX-RS), persistence (JPA), messaging (JMS), and web technologies (Servlets, JSP, JSF), among others.
+
+Q.9 What is the difference between a Servlet and a JSP?
+
+Servlet: A Java class that processes HTTP requests and generates responses. It is primarily Java code, which can include HTML code using PrintWriter.
+
+JSP (JavaServer Pages): A technology used to create dynamic web pages. JSP allows embedding Java code in HTML pages using special tags (<% %>). JSP is more suitable for view logic, while servlets are better for handling business logic.
+
+Q.10 What is the purpose of the Java Persistence API (JPA)?
+
+The Java Persistence API (JPA) is a specification for object-relational mapping (ORM) in Java, allowing developers to manage relational data in Java applications using simple, domain-specific objects. JPA helps in simplifying database operations like CRUD by abstracting away SQL queries and mapping database tables to Java classes.
+
+Q.11 What is the difference between stateful and stateless session beans?
+
+Stateful Session Bean: Maintains conversational state across multiple method calls. This means the bean retains client data between invocations. It is useful for applications like online shopping carts.
+
+Stateless Session Bean: Does not maintain any client state between method calls. Each invocation is independent of any previous invocations, making it suitable for lightweight operations like stateless services.
+
+Q.1 What is a thread and what are the different stages in its lifecycle?
+
+A thread is a lightweight unit of a process that executes a task independently. In Java, every thread runs inside the JVM and can perform multiple tasks concurrently. Java threads have the following lifecycle stages:
+
+New: The thread is created but not yet started.
+Runnable: After calling the start() method, the thread enters this state and is eligible for CPU execution.
+Blocked/Waiting: The thread is waiting for a resource to become available or for a signal to resume.
+Timed Waiting: The thread is waiting for a specified period using methods like sleep() or wait().
+Terminated: The thread finishes its execution and enters this final state.
+Q.2 What is the difference between a process and a thread?
+
+Process:
+A process is a separate execution environment with its own memory space. It represents a program in execution.
+Processes are heavyweight, and communication between processes is more complex.
+Thread:
+A thread is a subset of a process. Multiple threads can exist within a single process, sharing the process's memory and resources.
+Threads are lightweight, and inter-thread communication is simpler and faster.
+Q.3 What are the different types of thread priorities available in Java?
+
+Java threads can have different priorities, ranging from 1 (lowest) to 10 (highest). There are three commonly used thread priority constants:
+
+MIN_PRIORITY: 1
+NORM_PRIORITY: 5 (default)
+MAX_PRIORITY: 10
+The JVM scheduler uses these priorities to decide when threads should be executed.
+
+Q.4 What is context switching in Java?
+
+Context switching is the process of the CPU switching from one thread to another. This involves saving the current thread's state and loading the state of the next thread to be executed. Context switching allows multiple threads to share the CPU, giving the appearance of parallel execution (even on a single-core processor).
+
+Q.5 What is the difference between user threads and daemon threads?
+
+User Threads: These are regular threads that perform tasks for the application. The JVM will not exit as long as there are user threads running.
+
+Daemon Threads: These threads run in the background and perform support tasks like garbage collection. The JVM exits when only daemon threads are running. Daemon threads are useful for tasks that do not prevent the JVM from shutting down.
+
+Q.6 What is synchronization?
+
+Synchronization is the process of controlling the access of multiple threads to shared resources. It ensures that only one thread can access a synchronized block of code at a time, preventing race conditions and ensuring thread safety.
+
+java
+Copy code
+synchronized (object) {
+   // Thread-safe code
+}
+Q.7 What is a deadlock?
+
+A deadlock occurs when two or more threads are waiting indefinitely for resources held by each other. As a result, none of the threads can proceed. Deadlocks can arise when multiple threads acquire locks in different orders.
+
+Q.8 What is the use of the wait() and notify() methods?
+
+wait(): Causes the current thread to release the lock and enter a waiting state until another thread calls notify() or notifyAll() on the same object.
+
+notify(): Wakes up one of the threads that called wait() on the same object, allowing it to re-acquire the lock and proceed.
+
+notifyAll(): Wakes up all the waiting threads on the same object.
+
+These methods are used for inter-thread communication and coordination.
+
+Q.9 What is the difference between a thread and a process in Java?
+
+This is the same as Q.2. The main difference lies in memory management (processes have separate memory, threads share memory) and complexity (processes are heavyweight, threads are lightweight).
+
+Q.10 What is the difference between synchronized and volatile in Java?
+
+synchronized: Ensures that only one thread can execute a block of code or method at a time by acquiring a lock on the object. It ensures both atomicity and visibility of changes to variables.
+
+volatile: A keyword that ensures visibility of changes to a variable across threads, but it does not guarantee atomicity. It is used for variables that are read and written by multiple threads.
+
+Q.11 What is the purpose of the sleep() method in Java?
+
+The sleep() method causes the current thread to pause its execution for a specified duration. During this period, the thread remains in the Timed Waiting state and does not consume CPU resources.
+
+java
+Copy code
+Thread.sleep(1000); // Sleep for 1 second
+Q.12 What is the difference between wait() and sleep() in Java?
+
+wait(): Releases the lock on the object and pauses the thread until another thread calls notify() or notifyAll() on the same object. It is used for communication between threads.
+
+sleep(): Does not release any locks and simply pauses the thread for a specific time. It is used for making the thread sleep for a given duration.
+
+Q.13 What is the difference between notify() and notifyAll() in Java?
+
+notify(): Wakes up one thread that is waiting on the object's lock. If multiple threads are waiting, one is chosen arbitrarily by the JVM.
+
+notifyAll(): Wakes up all threads waiting on the object's lock, but only one of them can proceed after acquiring the lock.
+
+OOPS
+
+1. What is Object Oriented Programming (OOPs)?
+Object Oriented Programming (also known as OOPs) is a programming paradigm where the complete software operates as a bunch of objects talking to each other. An object is a collection of data and the methods 
+
+3. What is a Class?
+A class is a building block of Object Oriented Programs. It is a user-defined data type that contains the data members and member functions that operate on the data members. It is like a blueprint or template of objects having common properties and methods.
+
+4. What is an Object?
+An object is an instance of a class. Data members and methods of a class cannot be used directly. We need to create an object (or instance) of the class to use them
+
+5. What are the main features of OOPs?
+The main feature of the OOPs, also known as 4 pillars or basic principles of OOPs are as follows:
+
+Encapsulation
+Data Abstraction
+Polymorphism
+Inheritance
+
+6. What is Encapsulation?
+Encapsulation is the process of hiding data access from outside the class. We use getter and setter methods to set and retrieve the data."
+
+8. What is Polymorphism?
+The word 'Polymorphism' means having many forms. We can define multiple methods with the same name but different parameters. Polymorphism has two types: compile-time polymorphism and runtime polymorphism."
+
+9. What is Inheritance? What is its purpose?
+The idea of inheritance is simple, a class is derived from another class and uses data and implementation of that other class. The class which is derived is called child or derived or subclass and the class from which the child class is derived is called parent or base or superclass.
+
+10. What are access specifiers? What is their significance in OOPs?
+Access specifiers are special types of keywords that are used to specify or control the accessibility of entities like classes, methods, and so on. Private, Public, and Protected are examples of access specifiers or access modifiers.
+The key components of OOPs, encapsulation and data hiding, are largely achieved because of these access specifiers.
+
+What is an abstract class?
+An abstract class is a class that cannot be instantiated and is declared with the abstract keyword. It can have both abstract methods (no body) and concrete methods (with body).
+
+Why can't we instantiate an abstract class?
+We can't instantiate an abstract class because it is incomplete. It may have abstract methods without implementations.
+
+What is a pure virtual function?
+In Java, a pure virtual function is similar to an abstract method, which has no body and must be implemented by subclasses.
+
+How do you declare an abstract method in Java?
+Use the abstract keyword and don't provide a body:
+
+java
+Copy code
+abstract void show();
+
+Can an abstract class have non-abstract methods?
+Yes, an abstract class can have non-abstract methods with full implementations. Subclasses can use or override these methods.
+
+What is the purpose of a constructor in a class?
+The purpose of a constructor in a class is to initialize the fields of an object when it is created. It ensures that the object starts in a valid state.
+
+How do you access the fields and methods of a class?
+Fields and methods of a class are accessed using the dot (.) operator with the object name.
+Example:
+
+java
+Copy code
+objectName.fieldName;
+objectName.methodName();
+Can you have multiple objects of the same class?
+Yes, you can have multiple objects of the same class. Each object has its own copy of the fields, so they can hold different values. However, they share the same methods defined in the class.
+
+
+What is a friend function in Java?
+Java does not have the concept of a "friend function" as in C++. Instead, Java uses access modifiers (private, protected, default, and public) to control access to members. Classes within the same package or with specific relationships (like subclasses) can access members based on these modifiers.
+
+How is access granted in Java?
+In Java, access control is achieved through:
+
+Default (package-private): Members are accessible within the same package.
+Protected: Members are accessible within the same package and to subclasses in other packages.
+Public: Members are accessible everywhere.
+Private: Members are accessible only within the same class.
+
+
+What access rights does a class or method have in Java?
+Java provides access rights based on modifiers:
+
+Private: Only within the same class.
+Default: Within the same package.
+Protected: Package + subclasses.
+Public: Accessible from everywhere.
+
+
+Can external functions or classes access private members in Java?
+No, private members cannot be accessed by external functions or classes directly. However, Java provides mechanisms like getter and setter methods or using reflection (advanced concept) to allow controlled access.
+
+Why does Java not use friend functions?
+Java emphasizes encapsulation and provides a well-defined access control mechanism using access modifiers. This makes the concept of friend functions unnecessary. Developers can expose private data in a controlled way using public methods (getters/setters) or through interfaces.
+
+Types-Constructor
+
+Default Constructor
+Parameterized Constructor
+Copy Constructor
+
+FINAL REVISE
+OOP in Java: Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects, which can contain data and code: data in the form of fields (attributes or properties), and code in the form of procedures (methods). Java supports OOP principles such as:
+
+Encapsulation: Bundling data (variables) and methods that operate on the data into a single unit (class) and restricting access to the data.
+Inheritance: A mechanism where one class inherits properties and behaviors from another class.
+Polymorphism: The ability of different classes to respond to the same method in different ways.
+Abstraction: Hiding the implementation details and exposing only the functionality to the user.
+Constructors in Java: A constructor in Java is a special method that is used to initialize objects. It is called when an instance of a class is created. Constructors do not have a return type, not even void, and their name must match the class name.
+
+Types of Constructors:
+Default Constructor: A no-argument constructor that the compiler inserts if no other constructor is defined.
+Parameterized Constructor: A constructor that takes parameters to initialize an object with specific values.
+Inheritance in Java: Inheritance is a mechanism where one class (subclass or child class) derives properties and behaviors (fields and methods) from another class (superclass or parent class). It allows code reuse and establishes a relationship between classes. In Java, inheritance is achieved using the extends keyword. For example, if ClassB extends ClassA, ClassB will inherit the methods and properties of ClassA.
+
+Difference between Method Overloading and Method Overriding:
+
+Method Overloading: Involves having multiple methods in the same class with the same name but different parameters (number, type, or order). It is resolved at compile time.
+Method Overriding: Involves redefining a method in a subclass that is already defined in its superclass with the same method signature. It is resolved at runtime.
+Java Interface vs Abstract Class:
+
+Interface: An interface is a reference type in Java, similar to a class, that can contain only constants, method signatures (abstract methods), default methods, and static methods. Classes implement interfaces to define a contract that they must fulfill.
+Abstract Class: An abstract class can have both abstract methods (methods without a body) and concrete methods (with a body). Unlike interfaces, abstract classes can have state (instance variables).
+Key Differences:
+
+An interface allows multiple inheritance, whereas a class can only extend one abstract class.
+An abstract class can have defined methods, but an interface cannot (unless default or static methods are used).
+Access Modifiers in Java: Access modifiers determine the visibility or scope of a class, constructor, method, or field. Types:
+
+Public: The code is accessible from any other class.
+Private: The code is accessible only within the declared class.
+Protected: The code is accessible in the same package and in subclasses (even if they are in different packages).
+Default (no modifier): The code is accessible only within the same package.
+Final Keyword in Java: The final keyword in Java can be used in three contexts:
+
+Final Variable: The value of a final variable cannot be changed once assigned.
+Final Method: A final method cannot be overridden by subclasses.
+Final Class: A final class cannot be subclassed.
+Multithreading in Java: Multithreading is a process in which multiple threads run concurrently to perform tasks in parallel. Threads in Java are created by either:
+
+Implementing the Runnable interface and defining the run() method.
+Extending the Thread class and overriding its run() method.
+You can start a thread using the start() method.
+
+Exception Handling in Java: Exception handling is a mechanism that handles runtime errors to maintain the normal flow of application execution. In Java, exceptions are handled using the try, catch, finally, throw, and throws keywords.
+
+Checked Exceptions: Exceptions that are checked at compile-time (e.g., IOException).
+Unchecked Exceptions: Exceptions that occur at runtime (e.g., NullPointerException).
+Garbage Collection in Java: Garbage collection is the process by which the Java Virtual Machine (JVM) automatically deletes objects that are no longer in use to free up memory. The garbage collector runs in the background and identifies objects that have no active references.
+
+Types of Memory Areas Allocated by JVM:
+
+Heap: Used for dynamic memory allocation of objects and class instances.
+Stack: Stores local variables and method call information.
+Method Area: Contains metadata, such as class definitions and static variables.
+PC Registers: Program Counter that keeps track of the current instruction being executed.
+Native Method Stack: Holds information about native (non-Java) method calls.
+Difference between HashMap and Hashtable:
+
+HashMap: Allows one null key and multiple null values, is not synchronized (not thread-safe), and offers better performance.
+Hashtable: Does not allow null keys or values, is synchronized (thread-safe), but is slower than HashMap.
+
+
+DATA STRUCTURE AND ALGORITHM
+
+1: What is an array?
+Answer: An array is a data structure consisting of a collection of elements, each identified by at least one array index or key.
+
+2: Can an array be resized at runtime?
+Answer: In some programming languages, arrays can be resized dynamically, while in others, such as C, the size is fixed.
+
+3: What is the time complexity for accessing an element in an array?
+Answer: The time complexity for accessing an element in an array is O(1), as it can be accessed directly using its index.
+
+
+4: What is the difference between an array and a linked list?
+Answer: An array is a static data structure, while a linked list is a dynamic data structure. Arrays have a fixed size, and elements are stored consecutively in memory, while linked lists can grow and do not require contiguous memory allocation.
+
+6: Explain the concept of a multi-dimensional array.
+Answer: A multi-dimensional array is an array that contains other arrays. For example, a 2D array is an array of arrays, representing a matrix.
+
+1: What is a linked list?
+Answer: A linked list is a linear data structure consisting of a sequence of elements, where each element points to the next one, forming a chain.
+
+2: What are the different types of linked lists?
+Answer: Singly linked list, doubly linked list, and circular linked list.
+
+Question 3: What are the advantage of Linked List?
+Answer: Advantages of Linked Lists:
+
+Dynamic memory allocation
+Efficient insertion and deletion
+
+Disadvantages of Linked Lists:
+
+Slow random access
+More memory overhead
+
+5: What is a cycle/loop in Singly Linked List:
+Answer: A cycle, also known as a loop, in a singly-linked list occurs when a node in the list points back to a previous node, creating a circular path
+
+1: What is a stack?
+Answer: A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle.The common operations on a stack are push (insert an element), pop (remove the top element), and peek (view the top element).
+
+ How is a stack implemented in an array?
+Answer: A stack can be implemented using an array by maintaining a pointer to the top of the stack.
+
+ 5: What are the applications of a stack?
+Answer: Stacks are used in various applications, such as function calls, recursion, expression evaluation, and parsing.
+
+Question 1: What is a Queue?
+Answer: A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle, where elements are added at the rear (enqueue) and removed from the front (dequeue).
+
+Question 2: What are the different types of Queues?
+Answer:
+
+Simple Queue
+Circular Queue
+Priority Queue
+Double-Ended Queue (Deque)
+
+3: How is a Queue implemented in an array?
+Answer: An array can be used to implement a simple queue by maintaining two pointers: front and rear. Front points to the first element, and rear points to the next available position.
+
+4: How is a Queue implemented in a linked list?
+Answer: A linked list can be used to implement a queue by creating a node for each element and maintaining a head and tail pointer
+
+7: What are the applications of Queues?
+Answer:
+
+Task scheduling
+Message passing
+Simulation of real-world scenarios
+
+10: What is a priority queue?
+Answer: A priority queue is a queue where elements are assigned priorities and are dequeued based on their priorities.
+
+1: What is a heap data structure?
+Answer: A heap is a complete binary tree that satisfies the heap property: each node’s value is greater than or equal to its children’s values
+
+ 2: What are the two types of heaps?
+Answer: Max-heap and min-heap. In a max-heap, the root node has the maximum value, while in a min-heap, the root node has the minimum value.
+
+6: What are the applications of heaps?
+Answer: Heap applications:
+
+Priority queues
+Sorting
+
+ 7: What is the difference between a heap and a binary search tree (BST)?
+Answer: A heap is a complete binary tree that satisfies the heap property, while a BST is a partially ordered binary tree that satisfies the BST property.
+
+1: What is a hash data structure?
+Answer: A hash data structure is a data structure that stores key-value pairs, where the keys are hashed to determine the location of the value in the data structure.
+
+
+2: What is a hash table?
+Answer: A hash table is a data structure that implements an associative array, allowing fast retrieval of values based on unique keys. It uses a hash function to map keys to indices in an array
+
+3: What is a hash function?
+Answer: A hash function is a function that takes an input of any size and produces an output of a fixed size. The output is called a hash value or hash code.
+
+ 5: What is a collision?
+Answer: A collision occurs when two different keys hash to the same value.
+
+Question 6: Describe different collision resolution techniques.
+Answer:
+
+Open addressing: Use probing techniques (linear, quadratic, double hashing) to find the next available slot when a collision occurs.
+Separate chaining: Store key-value pairs in linked lists at each index, leading to better performance for larger data sets.
+
+1: What is a Tree?
+Answer: A tree is a non-linear data structure consisting of nodes connected by edges. Each node contains data and references to its child nodes. It has one special node called the root, with no parent, and leaf nodes with no children.
+
+Question 2: Explain different types of trees.
+Answer:
+
+Binary Tree: Each node has at most two children (left and right).
+Full Binary Tree: Every node except leaves has two children.
+Complete Binary Tree: All levels are filled except possibly the last, and nodes are filled left to right.
+Perfect Binary Tree: Every node has two children, and all leaves are at the same level.
+
+3: What are the basic operations performed on a tree?
+Answer:
+
+Insertion: Add a new node to the tree while maintaining its properties (e.g., ordering in search trees).
+Deletion: Remove a node from the tree while preserving its structure.
+Traversal: Visit each node in the tree exactly once in a specific order (preorder, inorder, postorder).
+Searching: Find a specific node with a given value based on search criteria.
+Question 4: What are the different ways to represent a tree in memory?
+Answer:
+
+Node-based representation: Each node stores its data and references to child nodes.
+Array-based representation: Use an array to store node data with calculations to find child nodes based on their positions.
+
+5: What are the advantages and disadvantages of using trees?
+Advantages:
+
+Efficient for hierarchical data representation and organization.
+Fast searching and traversal in balanced trees.
+Disadvantages:
+
+Memory overhead due to storing pointers or references.
+Not efficient for storing large amounts of unstructured data.
+
+9: Describe the different tree traversal methods (preorder, inorder, postorder).
+Answer:
+
+Preorder: Visit root, then left subtree, then right subtree.
+Inorder: Visit left subtree, then root, then right subtree.
+Postorder: Visit left subtree, then right subtree, then root.
+
+1: What is a graph?
+Answer: A graph is a data structure consisting of a set of vertices (nodes) and a set of edges that connect pairs of vertices. Graphs are used to represent relationships between objects, such as social networks, road networks, and computer networks.
+
+Question 2: Explain common graph representations.
+Answer:
+
+Adjacency matrix: A 2D array where rows and columns represent nodes, and values indicate the existence of an edge between them. Efficient for space usage, but can be slow for sparse graphs.
+Adjacency list: An array of linked lists or other data structures, where each list stores nodes connected to a specific node. Efficient for sparse graphs and adjacency queries, but may require more space.
+
+3: Differentiate between directed and undirected graphs.
+Answer:
+
+Directed graphs: Edges have a direction, signifying one-way relationships.
+Undirected graphs: Edges have no direction, representing bidirectional relationships.
+
+6: Explain Dijkstra’s algorithm and its applications.
+Answer: This algorithm finds the shortest path between two nodes in a weighted graph. It is used in route planning, network optimization, and other problems involving finding minimum-cost paths.
+
+ 7: Compare DFS and BFS algorithms: strengths, weaknesses, and use cases.
+Answer:
+
+DFS: Explores deeply before exploring breadth-wise, efficient for finding connected components, good for detecting cycles.
+BFS: Explores breadth-wise, efficient for finding shortest paths in unweighted graphs, useful for level-order traversals.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
