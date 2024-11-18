@@ -1,0 +1,43 @@
+The given C++ code is solving a problem where an array contains pairs of elements, with one single element appearing only once while the rest appear twice. The goal is to find the single element in the array using binary search.
+
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int arr[]={1,1,2,2,3,4,4,5,5};
+      int res=find(arr);
+      System.out.print(res);
+  }
+  public static int find(int arr[]){
+  int  n=arr.length;
+  if(n==1){
+    return arr[0];
+  }
+  if(arr[0]!=arr[1]){
+    return arr[0];
+  }
+  if(arr[n-1]!=arr[n-2]){
+    return arr[n-1];
+  }
+    
+    
+    int low=0;
+    int high=arr.length-2;
+    while(low<=high){
+      int mid=(low+high)/2;
+      
+      if(arr[mid]!=arr[mid+1] &&arr[mid]!=arr[mid-1]){
+        return arr[mid];
+      }
+      if((mid%2==1 &&arr[mid]!=arr[mid+1])||(mid%2==0 &&arr[mid]==arr[mid+1])){
+        low=mid+1;
+      }
+      else{
+        high=mid-1;
+      }
+    }
+    return -1;
+  }
+}
