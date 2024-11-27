@@ -1,6 +1,23 @@
 class Main {
     public static void main(String[] args) {
-        pattern34(5);
+        pattern27(4);
+    }
+    static void pattern27(int n){
+        int num=1;
+        int num2=n*n+1;
+        for(int i=1;i<=n;i++){
+            for(int space=1;space<i;space++){
+                System.out.print("  ");
+            }
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print(num+++" ");
+            }
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print(num2++ +" ");
+            }
+            num2 = num2 - (2 * (n - i + 1) - 1);
+            System.out.println();
+        }
     }
      static void pattern34(int n){
         for(int row=1;row<=n;row++){
@@ -68,29 +85,7 @@ class Main {
             System.out.println();
     }
     }
-   static void pattern27(int n){
-     int num=1;
-        for(int row=1;row<=n;row++){
-          for(int space=1;space<row;space++){
-            System.out.print("  ");
-          }
-            for(int col=1;col<=n-row+1;col++){
-                System.out.print(num+" ");
-                 num++;
-            }
-            System.out.println();
-    }
-    int num2=n*n+n;
-    for(int row=n;row>=1;row--){
-      for(int space=1;space<=n-row;space++){
-            System.out.print("  ");
-          }
-          for(int col=n-1;col>=1;col++){
-                System.out.print(num+" ");
-                 num++;
-            }
-    }
-    }
+  
   static void pattern25(int n){
         for(int row=1;row<=n;row++){
           for(int space=1;space<=n-row;space++){
