@@ -1064,6 +1064,54 @@ Answer:
 DFS: Explores deeply before exploring breadth-wise, efficient for finding connected components, good for detecting cycles.
 BFS: Explores breadth-wise, efficient for finding shortest paths in unweighted graphs, useful for level-order traversals.
 
+Operating Systems:
+An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs. It acts as an intermediary between users and the computer hardware, enabling the execution of applications and the coordination of tasks.
+
+What is Deadlock?
+Deadlock is a situation in computing where two or more processes are unable to proceed because each is waiting for the other to release resources
+
+What is Thrashing?
+
+Thrashing is a condition or a situation when the system is spending a major portion of its time servicing the page faults, but the actual processing done is very negligible. 
+
+Causes of thrashing:
+
+High degree of multiprogramming.
+Lack of frames.
+Page replacement policy.
+
+What is virtual memory?
+
+Virtual memory is a memory management technique used by operating systems to give the appearance of a large, continuous block of memory to applications, even if the physical memory (RAM) is limited. It allows the system to compensate for physical memory shortages, enabling larger applications to run on systems with less RAM.
+
+What is a kernel?
+
+A kernel is the core part of an operating system. It acts as a bridge between software applications and the hardware of a computer. The kernel manages system resources, such as the CPU, memory, and devices
+
+What is multitasking?
+
+Multi tasking operating systems allow multiple users to perform multiple tasks at the same time Multitasking is the ability of an OS to execute more than one task simultaneously on a CPU machine
+
+What is caching?
+It is the process of storing and accessing data from memory(i.e. cache memory). The main feature of caching is to reduce the time to access specific data. Caching aims at storing data that can be helpful in the future.
+
+Write a difference between paging and segmentation?
+
+Paging	Segmentation
+In paging, the program is divided into fixed or mounted size pages.	In segmentation, the program is divided into variable size segments.
+For the paging operating system is accountable.	For segmentation compiler is accountable.
+Page size is determined by hardware.	Here, the segment size is given by the user.
+It is faster in comparison to segmentation.	Segmentation is slow.
+Paging could result in internal fragmentation.	Segmentation could result in external fragmentation.
+
+What are real-time systems?
+
+
+A real-time system means that the system is subjected to real-time, i.e., the response should be guaranteed within a specified timing constraint or the system should meet the specified deadline. For example flight control systems, real-time monitors, etc. 
+
+What is spooling?
+Spooling is the process of temporary storage of data for use and execution by a device, program, or system. Data is sent to and stored in main memory or other volatile storage until it is requested for execution by a program or computer
+
 
 
 
