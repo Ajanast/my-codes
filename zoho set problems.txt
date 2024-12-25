@@ -1,0 +1,726 @@
+1. Print the word with odd letters as
+
+P         M
+ R      A
+   O  R
+     G
+  O    R
+ R       A
+P          M 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+   String name="PROGRAM";
+   ans(name);
+  }
+  public static void ans(String name){
+    int n=name.length();
+    char[][] arr=new char[n][n];
+    for(int i=0;i<arr.length;i++){
+      for(int j=0;j<arr[0].length;j++){
+        if(i==j){
+          arr[i][j]=name.charAt(i);
+          
+        }
+        else if(j==n-i-1){
+          arr[i][j]=name.charAt(j);
+        }
+        else{
+          arr[i][j]=' ';
+        }
+      }
+    }
+    
+    for(int i=0;i<arr.length;i++){
+      for(int j=0;j<arr[0].length;j++){
+        System.out.print(arr[i][j]);
+      }
+      System.out.println();
+    }
+  }
+}
+
+2. Given a set of numbers like <10, 36, 54,89,12> we want to find sum of weights based on the following conditions:   
+
+1. 5 if a perfect square     
+2. 4 if multiple of 4 and divisible by 6
+3. 3 if even number
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+   int arr[]={10, 36, 54,89,12};
+   HashMap<Integer,Integer> hs=new HashMap<>();
+   for(int num:arr){
+     int weight=ans(num);
+     hs.put(num,weight);
+   }
+   ArrayList<Map.Entry<Integer,Integer>> sortlist=new ArrayList<>(hs.entrySet());
+   sortlist.sort(Map.Entry.comparingByValue());
+   
+   for(Map.Entry<Integer,Integer> entry :sortlist){
+     System.out.println("< "+entry.getKey()+","+entry.getValue()+">");
+   }
+   
+  }
+  public static int ans(int num){
+    int weight=0;
+    if(issquare(num)){
+      weight+=5;
+    }
+    if(num%4==0 && num%6==0){
+      weight+=4;
+    }
+    if(num%2==0){
+      weight+=3;
+    }
+    return weight;
+  }
+  public  static boolean issquare(int num){
+    int sqr=(int)Math.sqrt(num);
+    return sqr * sqr==num;
+  }
+}
+
+3. Save the string “WELCOMETOZOHOCORPORATION” in a two dimensional array and search for substring like “too” in the two dimensional string both from left to right and from top to bottom.
+
+w    e    L    C    O
+M    E    T    O    Z
+O    H    O    C    O
+R    P    O    R    A
+T    I    O    n      
+And print the start and ending index as Start index : <1,2> End index: <3, 2>
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String name = "WELCOMETOZOHOCORPORATION";
+        ans(name);
+    }
+
+    public static void ans(String name) {
+        // Declare the 5x5 matrix and search string
+        char arr[][] = new char[5][5];
+        String search = "TOO";
+        char arrname[] = name.toCharArray();
+        int index = 0;
+
+        // Fill the 5x5 matrix with characters from the input string
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (index < arrname.length) {
+                    arr[i][j] = arrname[index++];
+                } else {
+                    arr[i][j] = ' '; // Fill remaining spaces with space
+                }
+            }
+        }
+
+        // Search for the substring "TOO" horizontally and vertically
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                // Horizontal search: Check if "TOO" fits and matches
+                if (j + search.length() <= arr[0].length) {
+                    if (arr[i][j] == search.charAt(0) && 
+                        arr[i][j + 1] == search.charAt(1) && 
+                        arr[i][j + 2] == search.charAt(2)) {
+                        // Printing 1-based indices for horizontal match
+                        System.out.println("<" + (i + 1) + "," + (j + 1) + ">, <" + (i + 1) + "," + (j + 3) + ">");
+                    }
+                }
+
+                // Vertical search: Check if "TOO" fits and matches
+                if (i + search.length() <= arr.length) {
+                    if (arr[i][j] == search.charAt(0) && 
+                        arr[i + 1][j] == search.charAt(1) && 
+                        arr[i + 2][j] == search.charAt(2)) {
+                        // Printing 1-based indices for vertical match
+                        System.out.println("<" + (i + 1) + "," + (j + 1) + ">, <" + (i + 3) + "," + (j + 1) + ">");
+                    }
+                }
+            }
+        }
+    }
+}
+
+5. Given a two dimensional array of string like
+
+  <”luke”, “shaw”>
+  <”wayne”, “rooney”>
+  <”rooney”, “ronaldo”>
+  <”shaw”, “rooney”> 
+Where the first string is “child”, second string is “Father”. And given “ronaldo” we have to find his no of grandchildren Here “ronaldo” has 2 grandchildren. So our output should be 2.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+     String[][] relationships = {
+            {"luke", "shaw"},
+            {"wayne", "rooney"},
+            {"rooney", "ronaldo"},
+            {"shaw", "rooney"}
+        };
+         String target = "ronaldo";
+        
+        HashMap<String ,List<String>> hs=new HashMap<>();
+        
+        for(String[] str:relationships){
+          String father=str[1];
+          String child=str[0];
+          hs.putIfAbsent(father,new ArrayList<>());
+          hs.get(father).add(child);
+          
+        }
+        List<String> childrens=hs.getOrDefault(target,new ArrayList<>());
+        int count=0;
+        for(String child :childrens){
+           List<String> grand=hs.getOrDefault(child,new ArrayList<>());
+          count+=grand.size();
+        }
+        System.out.print(count);
+        
+        
+        
+  }
+}
+
+Given an incomplete Sudoku configuration in terms of a 9 x 9  2-D square matrix (grid[][]), the task is to find a solved Sudoku. For simplicity, you may assume that there will be only one unique solution.
+
+A sudoku solution must satisfy all of the following rules:
+
+Each of the digits 1-9 must occur exactly once in each row.
+Each of the digits 1-9 must occur exactly once in each column.
+Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+Zeros in the grid indicates blanks, which are to be filled with some number between 1-9. You can not replace the element in the cell which is not blank.
+
+
+//{ Driver Code Starts
+// Initial Template for Java
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+class Driver_class {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            int grid[][] = new int[9][9];
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) grid[i][j] = sc.nextInt();
+            }
+
+            Solution ob = new Solution();
+
+            if (ob.SolveSudoku(grid) == true)
+                ob.printGrid(grid);
+            else
+                System.out.print("No solution exists");
+            System.out.println();
+
+            System.out.println("~");
+        }
+    }
+}
+
+// } Driver Code Ends
+
+
+// User function Template for Java
+
+class Solution {
+    // Function to find a solved Sudoku.
+    static boolean SolveSudoku(int grid[][]) {
+        // add your code here
+        for(int row=0;row<9;row++){
+            for(int col=0;col<9;col++){
+                if(grid[row][col]==0){
+                    for(int num=1;num<=9;num++){
+                        if(issafe(grid,row,col,num)){
+                            grid[row][col]=num;
+                            
+                            if(SolveSudoku(grid)==true){
+                                return true;
+                            }else{
+                               grid[row][col]=0;  
+                            }
+                            
+                        }
+                        
+                    }
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // Function to print grids of the Sudoku.
+    static void printGrid(int grid[][]) {
+        // add your code here
+        for(int i=0;i<9;i++){
+            for(int j=0;j<9;j++){
+                System.out.print(grid[i][j]+" ");
+            }
+             
+        }
+    }
+    static boolean issafe(int[][] grid,int row,int col,int num){
+        
+        for(int i=0;i<9;i++){
+               if(grid[row][i]==num||grid[i][col]==num){
+                   return false;
+               } 
+        }
+         int startRow = row - row % 3;
+        int startCol = col - col % 3;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (grid[i+ startRow][j + startCol] == num) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    
+}
+}
+
+Form a number system with only 3 and 4. Find the nth number of the number system. Eg.) The numbers are: 3, 4, 33, 34, 43, 44, 333, 334, 343, 344, 433, 434, 443, 444, 3333, 3334, 3343, 3344, 3433, 3434, 3443, 3444 
+
+import java.util.*;
+
+public class NumberSystem {
+    public static List<String> findFirstNNumbers(int n) {
+        Queue<String> queue = new LinkedList<>();
+        List<String> result = new ArrayList<>();
+
+        // Start with the initial numbers in the sequence
+        queue.add("3");
+        queue.add("4");
+
+        // Generate numbers until we have the first `n`
+        while (result.size() < n) {
+            // Take the next number from the queue
+            String current = queue.poll();
+
+            // Add it to the result list
+            result.add(current);
+
+            // Generate the next numbers and add them to the queue
+            queue.add(current + "3");
+            queue.add(current + "4");
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the value of n:");
+        int n = scanner.nextInt();
+
+        // Get the first `n` numbers
+        List<String> numbers = findFirstNNumbers(n);
+
+        // Print the result
+        System.out.println("The first " + n + " numbers are: " + numbers);
+    }
+}
+
+/* Remove unbalanced parentheses in a given expression.
+
+    Eg.) Input  : ((abc)((de))
+         Output : ((abc)(de)) 
+ 
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      String str="(a(b)))(c(d)";
+      ans(str);
+  }
+  static void ans(String str){
+    
+    int len=str.length();
+    char[] arr=str.toCharArray();
+    int open=0;
+    int close=0;
+    boolean[] invalid=new boolean[len];
+   
+   for(int i=0;i<len;i++){
+     if(arr[i]=='(')
+       open++;
+     else if(arr[i]==')')
+       if(open>0){
+         open--;
+       }
+       else{
+         invalid[i]=true;
+       }
+   }
+   
+   for(int i=len-1;i>=0;i--){
+     if(arr[i]==')')
+       close++;
+     else if(arr[i]=='(')
+       if(close>0){
+         close--;
+       }
+       else{
+         invalid[i]=true;
+       }
+   }
+   
+   StringBuilder sb=new StringBuilder();
+   for(int i=0;i<len;i++){
+     if(invalid[i]!=true){
+       sb.append(arr[i]);
+     }
+   }
+   System.out.print(sb.toString());
+  }
+}
+
+/* 1. Write a program to give the following output for the given input
+
+Eg 1: Input: a1b10
+       Output: abbbbbbbbbb
+Eg: 2: Input: b3c6d15
+          Output: bbbccccccddddddddddddddd
+The number varies from 1 to 99.*/
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      String str="b3c6d15";
+      ans(str);
+  }
+  static void ans(String str){
+    
+    
+    StringBuilder sb=new StringBuilder();
+   for(int i=0;i<str.length();i++){
+     char c=str.charAt(i);
+     int num=0;
+    
+     while(i+1<str.length() && Character.isDigit(str.charAt(i+1)) ){
+       int digit=Character.getNumericValue(str.charAt(++i));
+       num=num*10 + digit;
+     }
+     for(int j=0;j<num;j++){
+       sb.append(c);
+     }
+     
+   }
+   System.out.println(sb.toString());
+  }
+}
+
+/* 2. Write a program to sort the elements in odd positions in descending order and elements in ascending order
+
+Eg 1: Input : 13,2 4,15,12,10,5
+      Output: 13,2,12,10,5,15,4
+Eg 2: Input : 1,2,3,4,5,6,7,8,9
+      Output: 9,2,7,4,5,6,3,8,1 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {13, 2, 4, 15, 12, 10, 5};
+        ans(arr);
+    }
+
+    static void ans(int[] arr) {
+        int oddcount = 0;
+
+        // Count the number of odd-indexed elements (1-based indexing)
+        for (int i = 0; i < arr.length; i++) {
+            if ((i + 1) % 2 != 0) { // Adjusted for 1-based index
+                oddcount++;
+            }
+        }
+
+        int[] oddarr = new int[oddcount];
+        int[] evenarr = new int[arr.length - oddcount];
+
+        // Separate the elements into odd-indexed and even-indexed arrays
+        int oddindex = 0, evenindex = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if ((i + 1) % 2 != 0) { // Adjusted for 1-based index
+                oddarr[oddindex++] = arr[i];
+            } else {
+                evenarr[evenindex++] = arr[i];
+            }
+        }
+
+        // Sort the odd array in descending order
+        Arrays.sort(oddarr);
+        for (int i = 0, j = oddarr.length - 1; i < j; i++, j--) {
+            int temp = oddarr[i];
+            oddarr[i] = oddarr[j];
+            oddarr[j] = temp;
+        }
+
+        // Merge the odd and even arrays back into the original array
+        int left = 0, right = 0, k = 0;
+        while (left < oddarr.length || right < evenarr.length) {
+            if (left < oddarr.length) {
+                arr[k++] = oddarr[left++];
+            }
+            if (right < evenarr.length) {
+                arr[k++] = evenarr[right++];
+            }
+        }
+
+        // Print the result
+        System.out.println(Arrays.toString(arr));
+    }
+}
+
+/* 5. Given two sorted arrays, merge them such that the elements are not repeated
+
+Eg 1: Input:
+        Array 1: 2,4,5,6,7,9,10,13
+        Array 2: 2,3,4,5,6,7,8,9,11,15
+       Output:
+       Merged array: 2,3,4,5,6,7,8,9,10,11,13,15 */
+
+/* Procedure 1 : Remove repeated terms and saving into third array(lengthy)*/
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {2,4,5,6,7,9,10,13};
+        int[] arr2 = {2,3,4,5,6,7,8,9,11,15};
+        ans(arr1,arr2);
+        
+    }
+
+    static void ans(int[] arr1,int[] arr2) {
+    
+    ArrayList<Integer> list=new ArrayList<>();
+    int left=0,right=0;
+    while(left<arr1.length && right<arr2.length){
+      
+      if(arr1[left]==arr2[right]){
+        list.add(arr1[left]);
+        left++;
+        right++;}
+      else if(arr1[left]<arr2[right]){
+        list.add(arr1[left]);
+        left++;}
+      else{
+        list.add(arr2[right]);
+        right++;}
+    }
+    while (left < arr1.length) {
+            list.add(arr1[left++]);
+        }
+
+        // Add remaining elements from arr2
+        while (right < arr2.length) {
+            list.add(arr2[right++]);
+        }
+    
+    for (int i : list ){
+      System.out.print(i+" ");
+    } 
+    }
+}
+
+
+2. Two strings of equal length are given print the mismatched ones.
+I/P: a b c d e f g h i
+      a b d e e g g i i
+O/P: cd , de //when two char are mismatched they should be printed together.
+      f , g
+      h , i
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        char[] arr1 = {'a','b','c','d','e','f','g','h','i'};
+        char[] arr2 = {'a','b','d','e','e','g','g','i','i'};
+        ans(arr1,arr2);
+        
+    }
+
+    static void ans(char[] arr1,char[] arr2) {
+    
+    int left=0,right=0;
+    ArrayList<String> list=new ArrayList<>();
+    while(left<arr1.length){
+      if(arr1[left]!=arr2[right]){
+        String s="";
+        s+=arr1[left];
+        s+=arr2[right];
+        list.add(s);
+        
+      }
+      left++;
+      right++;
+      
+    }
+     while (left < arr1.length) {
+            list.add("" + arr1[left]);
+            left++;
+        }
+
+        while (right < arr2.length) {
+            list.add("" + arr2[right]);
+            right++;
+        }
+    for(String s:list){
+      System.out.print(s+" ");
+    }
+    }
+}
+
+1. Arrange the numbers in descending order depending on the no. of factors available for each number.
+I/P: {6,8,9}
+O/P: {8,6,9} or {6,8,9}
+Reason: factors of 8 (1,2,4,8), factors of 6 (1,2,3,6), factors of 9 (1,3,9).
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        char[] arr1 = {6,8,9};
+      
+        ans(arr1);
+        
+    }
+
+    static void ans(char[] arr1) {
+    
+    HashMap<Integer ,Integer> map=new HashMap<>();
+    for(int i=0;i<arr1.length;i++){
+      int num=arr1[i];
+      int factors=0;
+      for(int j=1;j<=num;j++){
+        if(num%j==0){
+          factors++;
+        }
+      }
+      map.put(num,factors);
+    }
+  List<Map.Entry<Integer,Integer>> list=new ArrayList<>(map.entrySet());
+  list.sort((entry1,entry2)-> entry2.getValue().compareTo(entry1.getValue()));
+  
+  for(Map.Entry<Integer,Integer> entry:list){
+    System.out.print(entry.getKey()+" ");
+  }
+   
+    }
+}
+
+
+1.Given two numbers a and b both < 200 we have to find the square numbers which lie between a and b(inclusive)
+
+eg) i/p a = 20;b = 100;
+      o/p 25,36,49,64,81,100 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int a=20,b=100;
+      for(int i=1;i<=Math.sqrt(200);i++){
+        int val=i*i;
+        if(val>=a && val<=b){
+          System.out.print(val+" ");
+        }
+      }
+  }
+}
+
+
+4.a. Given two binary numbers add the two numbers in binary form without converting them to decimal value.
+
+eg) a = 1010 b = 11001
+      o/p  100011	            
+  b.The two numbers were given in base n 
+	eg) a = 123  b = 13  n = 4
+	      o/p  202
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+       String a = "123";
+        String b = "13";
+        int base = 4;
+
+        System.out.println(addBaseN(a, b, base));
+  }
+  static String addBaseN(String a,String b,int base){
+    int i=a.length()-1;
+    int j=b.length()-1;
+    int carry=0;
+    StringBuilder sb=new StringBuilder();
+    int sum=0;
+    while(i>=0 || j>=0 || carry!=0){
+      sum=carry;
+      if(i>=0)
+        sum+=a.charAt(i--)-'0';
+      if(j>=0)
+        sum+=b.charAt(j--)-'0';
+      
+      sb.append(sum%base);
+      carry=sum/base;
+    }
+    return sb.reverse().toString();
+  }
+}
+
+for n = 6
+1	7	12	16	19	21
+2	8	13	17	20
+3	9	14	18	
+4	10	15
+5	11	
+6 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+       ans(6);
+  }
+  static void ans(int n){
+    int value=1;
+    
+    
+    
+     for(int row=1;row<=n;row++){
+       int current=value;
+      for(int col=row;col<=n;col++){
+       System.out.print(current+" "); 
+       current+=(n-col+value);
+        
+      }
+      value++;
+       System.out.println();
+    }
+    
+    
+    
+    
+  }
+}
+
+
+
+
